@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>3BIGS | Internal Resources</title>
+<style>
+:root{
+  --navy:#0b1f3a; --navy-2:#13335c; --blue:#2f6df6; --teal:#12b5a6; --violet:#7a5cf0; --amber:#f2a33a;
+  --ink:#14233a; --muted:#64748b; --line:#e2e8f2; --bg:#f3f6fb; --card:#fff;
+  --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+  --mono:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+
+/* header */
+.top{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg,var(--navy) 0%,var(--navy-2) 60%,#1c4a85 100%)}
+.top::before,.top::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.top::before{width:420px;height:420px;right:-120px;top:-180px;background:radial-gradient(circle,rgba(47,109,246,.55),transparent 68%)}
+.top::after{width:320px;height:320px;left:-100px;bottom:-190px;background:radial-gradient(circle,rgba(18,181,166,.45),transparent 70%)}
+.top .wrap{position:relative;padding-top:54px;padding-bottom:64px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.16em;font-size:14px}
+.brand i{width:26px;height:26px;border-radius:8px;background:linear-gradient(135deg,var(--blue),var(--teal));display:block}
+.pill{margin-left:auto;font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:99px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22)}
+.bar{display:flex;align-items:center}
+h1{margin:40px 0 10px;font-size:clamp(30px,4.4vw,46px);line-height:1.08;letter-spacing:-.02em;font-weight:700}
+h1 span{background:linear-gradient(90deg,#7fb0ff,#5eead4);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{margin:0;max-width:56ch;color:#c4d3ea;font-size:16.5px}
+
+/* grid */
+main.wrap{margin-top:-34px;position:relative;z-index:2}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.card{--c:var(--blue);position:relative;display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px 26px 22px;overflow:hidden;box-shadow:0 18px 40px -30px rgba(11,31,58,.5);transition:transform .2s,box-shadow .2s,border-color .2s}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--c)}
+.card::after{content:"";position:absolute;right:-60px;top:-60px;width:170px;height:170px;border-radius:50%;background:color-mix(in srgb,var(--c) 9%,transparent)}
+.card:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--c) 45%,#fff);box-shadow:0 26px 46px -28px color-mix(in srgb,var(--c) 70%,#0b1f3a)}
+.head{display:flex;align-items:center;gap:14px;position:relative;z-index:1}
+.num{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-weight:800;font-size:15px;color:#fff;background:var(--c);flex:none;letter-spacing:.02em}
+.tag{margin-left:auto;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c);background:color-mix(in srgb,var(--c) 11%,#fff);padding:5px 11px;border-radius:99px}
+h2{margin:18px 0 6px;font-size:20px;line-height:1.25;letter-spacing:-.01em;position:relative;z-index:1}
+.desc{margin:0 0 18px;color:var(--muted);font-size:14.5px;flex:1;position:relative;z-index:1}
+.url{position:relative;z-index:1;font-family:var(--mono);font-size:12.5px;color:#41536b;background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin-bottom:16px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.acts{display:flex;gap:10px;position:relative;z-index:1}
+.btn{flex:1;display:inline-flex;justify-content:center;align-items:center;gap:8px;font:inherit;font-size:14px;font-weight:600;border-radius:12px;padding:11px 14px;cursor:pointer;transition:.18s;border:1px solid transparent}
+.open{background:var(--c);color:#fff}
+.open:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.copy{background:#fff;color:var(--ink);border-color:var(--line)}
+.copy:hover{border-color:var(--c);color:var(--c)}
+.copy.done{background:color-mix(in srgb,var(--teal) 14%,#fff);border-color:var(--teal);color:#0c7f74}
+.btn svg{width:16px;height:16px}
+
+/* empty slot */
+.card.empty{background:repeating-linear-gradient(135deg,#fafcff,#fafcff 12px,#f4f7fc 12px,#f4f7fc 24px);border:2px dashed #c9d5e6;box-shadow:none}
+.card.empty::before,.card.empty::after{display:none}
+.card.empty:hover{transform:none;box-shadow:none;border-color:#aebfd8}
+.card.empty .num{background:#cbd6e6}
+.card.empty .tag{color:#7b8ba3;background:#e8eef7}
+.card.empty h2{color:#7b8ba3}
+.card.empty .url{border-style:dashed;background:transparent;color:#96a4ba}
+.card.empty .btn{pointer-events:none;opacity:.45;background:#fff;border-color:var(--line);color:var(--muted)}
+
+footer{padding:34px 0 46px;text-align:center;color:var(--muted);font-size:12.5px}
+footer b{color:var(--ink);letter-spacing:.08em}
+.hint{margin:26px auto 0;max-width:680px;text-align:center;font-size:13px;color:var(--muted)}
+.hint code{font-family:var(--mono);background:#e8eef7;border-radius:6px;padding:1px 6px;font-size:12px}
+
+@media(max-width:760px){
+  .grid{grid-template-columns:1fr}
+  .top .wrap{padding-top:36px;padding-bottom:56px}
+  .pill{display:none}
+}
+@media print{.top::before,.top::after{display:none}.btn{display:none}.card{break-inside:avoid;box-shadow:none}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <div class="brand"><i></i>3BIGS</div>
+      <span class="pill">Internal use only</span>
+    </div>
+    <h1>Team <span>resources</span>, all in one place.</h1>
+    <p class="sub">Quick links to our demos and internal sites. Open them in one click, or copy the link to share with the team.</p>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="grid" id="grid"></div>
+  <p class="hint">To add a link, edit the <code>RESOURCES</code> list at the bottom of this file. Fill in <code>name</code>, <code>desc</code> and <code>url</code> for any empty slot.</p>
+</main>
+
+<footer>
+  <div class="wrap"><b>3BIGS CO., LTD.</b> · Internal use only. Please do not share outside the team.</div>
+</footer>
+
+<script>
+/* ================= EDIT HERE =================
+   Six slots, shown as three rows of two.
+   Leave url empty ("") to keep a slot as "Coming soon".
+   color options: blue, teal, violet, amber                */
+var RESOURCES = [
+  { name: "ALAGA TOTAL HEALTHCARE", desc: "Introduction page for the ALAGA total healthcare solution.",
+    url: "https://3bigs.tail2c4a41.ts.net:8443/intro", tag: "Total", color: "blue" },
+  { name: "ALAGA Microbiome Demo", desc: "Live demo site for the ALAGA microbiome service.",
+    url: "https://3bigs.tail2c4a41.ts.net/", tag: "Demo", color: "teal" },
+  { name: "Microbiome DTC Demo", desc: "ONT based analysis portal for yzone, gut, oral ", url: "http://100.86.101.83:8003/", tag: "Demo", color: "violet" },
+  { name: "Cosmetics Distributor", desc: "List of 3BIGS and distributors produts all in one page", url: "https://health.3bigs.com/cosmo", tag: "Cosmetics", color: "amber" },
+  { name: "TrioHealix Homepage", desc: "Homepage", url: "https://sathi319.github.io/triohealix/", tag: "Homepage", color: "blue" },
+  { name: "", desc: "", url: "", tag: "", color: "teal" }
+];
+/* ============================================= */
+
+var COLORS = { blue: "#2f6df6", teal: "#12b5a6", violet: "#7a5cf0", amber: "#f2a33a" };
+var esc = function (s) {
+  return String(s).replace(/[&<>"]/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]; });
+};
+var ICON_OPEN = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>';
+var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V6a2 2 0 0 1 2-2h9"/></svg>';
+
+document.getElementById("grid").innerHTML = RESOURCES.map(function (r, i) {
+  var n = ("0" + (i + 1)).slice(-2);
+  var c = COLORS[r.color] || COLORS.blue;
+  if (!r.url) {
+    return '<article class="card empty"><div class="head"><div class="num">' + n + '</div><span class="tag">Coming soon</span></div>' +
+      '<h2>Resource slot ' + n + '</h2><p class="desc">Reserved for a new link.</p>' +
+      '<div class="url">https://</div>' +
+      '<div class="acts"><span class="btn open">Open ' + ICON_OPEN + '</span><span class="btn copy">Copy link</span></div></article>';
+  }
+  return '<article class="card" style="--c:' + c + '"><div class="head"><div class="num">' + n + '</div>' +
+    (r.tag ? '<span class="tag">' + esc(r.tag) + '</span>' : '') + '</div>' +
+    '<h2>' + esc(r.name) + '</h2><p class="desc">' + esc(r.desc) + '</p>' +
+    '<div class="url" title="' + esc(r.url) + '">' + esc(r.url) + '</div>' +
+    '<div class="acts"><a class="btn open" href="' + esc(r.url) + '" target="_blank" rel="noopener noreferrer">Open ' + ICON_OPEN + '</a>' +
+    '<button type="button" class="btn copy" data-url="' + esc(r.url) + '">' + ICON_COPY + ' Copy link</button></div></article>';
+}).join("");
+
+document.getElementById("grid").addEventListener("click", function (e) {
+  var b = e.target.closest(".copy[data-url]");
+  if (!b) return;
+  var url = b.getAttribute("data-url");
+  var done = function () {
+    b.classList.add("done"); b.innerHTML = "Copied";
+    setTimeout(function () { b.classList.remove("done"); b.innerHTML = ICON_COPY + " Copy link"; }, 1600);
+  };
+  var fallback = function () {
+    var a = document.createElement("textarea"); a.value = url; document.body.appendChild(a); a.select();
+    try { document.execCommand("copy"); } catch (x) {} a.remove(); done();
+  };
+  if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(url).then(done, fallback); else fallback();
+});
+</script>
+</body>
+</html>
